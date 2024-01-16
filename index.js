@@ -44,18 +44,25 @@ function main(){
 
 
     // PUT
-    axios.put('https://jsonplaceholder.typicode.com/users/1', {
-        name : "Jose Graham",
-        username: "jg1900"
-    }).then((res)=> console.log(res))
-    .catch((err)=> console.log(err))
+    // axios.put('https://jsonplaceholder.typicode.com/users/1', {
+    //     name : "Jose Graham",
+    //     username: "jg1900"
+    // }).then((res)=> console.log(res))
+    // .catch((err)=> console.log(err))
     
     
     //PATCH
-    axios.patch('https://jsonplaceholder.typicode.com/users/1', {
-        name : "Jose Graham",
-        username: "jg1900"
-    }).then((res)=> console.log(res))
+    // axios.patch('https://jsonplaceholder.typicode.com/users/1', {
+    //     name : "Jose Graham",
+    //     username: "jg1900"
+    // }).then((res)=> console.log(res))
+    // .catch((err)=> console.log(err))
+
+
+
+    //DELETE
+    axios.delete('https://jsonplaceholder.typicode.com/users/1'
+    ).then((res)=> console.log(res))
     .catch((err)=> console.log(err))
 }
 
