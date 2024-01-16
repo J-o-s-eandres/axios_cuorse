@@ -32,13 +32,31 @@ function main(){
       
 
     // Post option 2
-    const data = {
-        email: "eve.holt@reqres.in",
-        password: "pistol"
-}
-    axios.post('https://reqres.in/api/register',data )
-      .then((res) => console.log(res))
-      .catch((err)=> console.log(err))
+//     const data = {
+//         email: "eve.holt@reqres.in",
+//         password: "pistol"
+// }
+//     axios.post('https://reqres.in/api/register',data )
+//       .then((res) => console.log(res))
+//       .catch((err)=> console.log(err))
+
+
+
+
+    // PUT
+    axios.put('https://jsonplaceholder.typicode.com/users/1', {
+        name : "Jose Graham",
+        username: "jg1900"
+    }).then((res)=> console.log(res))
+    .catch((err)=> console.log(err))
+    
+    
+    //PATCH
+    axios.patch('https://jsonplaceholder.typicode.com/users/1', {
+        name : "Jose Graham",
+        username: "jg1900"
+    }).then((res)=> console.log(res))
+    .catch((err)=> console.log(err))
 }
 
 
