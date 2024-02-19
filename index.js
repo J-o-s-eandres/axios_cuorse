@@ -123,14 +123,29 @@
     // console.log(res)
 
     //Error  Handling
-    axios.get('https://jsonplaceholder.typicode.com/postss')
-    .then((res) => console.log(res))
-    .catch((err) => {
-        console.log(err.response)
-        console.log(err.response.data)
-        console.log(err.response.status)
-        console.log(err.response.headers)
-    });
+    // axios.get('https://jsonplaceholder.typicode.com/postss')
+    // .then((res) => console.log(res))
+    // .catch((err) => {
+    //     console.log(err.response)
+    //     console.log(err.response.data)
+    //     console.log(err.response.status)
+    //     console.log(err.response.headers)
+    // });
+
+    // Instancias
+    const axiosInstance =axios.create({
+        baseURL : 'https://jsonplaceholder.typicode.com',
+    })
+
+    const resPost = await axiosInstance.get('/posts/1')
+    console.log(resPost)
+
+    const resUsers = await axiosInstance.get('/users/1')
+    console.log(resUsers)
+
+
+
+
 
 }
 
