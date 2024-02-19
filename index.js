@@ -102,17 +102,24 @@
 
 
     // Request transform 
-    const res = await axios.get('https://jsonplaceholder.typicode.com/users', {
-        transformResponse: axios.defaults.transformResponse.concat(data =>{
-            data = data.map(user => {
-                return {
-                    ...user,
-                    myCustomTitle: `${user.name} ${user.username} ${user.email}`
-                }
-            })
-            return data
-        })
-    })
+    // const res = await axios.get('https://jsonplaceholder.typicode.com/users', {
+    //     transformResponse: axios.defaults.transformResponse.concat(data =>{
+    //         data = data.map(user => {
+    //             return {
+    //                 ...user,
+    //                 myCustomTitle: `${user.name} ${user.username} ${user.email}`
+    //             }
+    //         })
+    //         return data
+    //     })
+    // })
+    // console.log(res)
+
+    // Globals 
+
+    axios.defaults.headers.common['Jgm'] = 'hello'
+
+    const res = await axios.get('https://jsonplaceholder.typicode.com/users')
     console.log(res)
 }
 
