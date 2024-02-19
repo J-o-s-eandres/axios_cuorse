@@ -135,6 +135,7 @@
     // Instancias
     const axiosInstance =axios.create({
         baseURL : 'https://jsonplaceholder.typicode.com',
+        timeout:1000
     })
 
     const resPost = await axiosInstance.get('/posts/1')
