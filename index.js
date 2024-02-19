@@ -117,10 +117,21 @@
 
     // Globals 
 
-    axios.defaults.headers.common['Jgm'] = 'hello'
+    // axios.defaults.headers.common['Jgm'] = 'hello'
 
-    const res = await axios.get('https://jsonplaceholder.typicode.com/users')
-    console.log(res)
+    // const res = await axios.get('https://jsonplaceholder.typicode.com/users')
+    // console.log(res)
+
+    //Error  Handling
+    axios.get('https://jsonplaceholder.typicode.com/postss')
+    .then((res) => console.log(res))
+    .catch((err) => {
+        console.log(err.response)
+        console.log(err.response.data)
+        console.log(err.response.status)
+        console.log(err.response.headers)
+    });
+
 }
 
 
