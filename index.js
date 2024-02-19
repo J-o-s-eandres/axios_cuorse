@@ -144,10 +144,6 @@
     const resUsers = await axiosInstance.get('/users/1')
     console.log(resUsers)
 
-
-
-
-
 }
 
 
