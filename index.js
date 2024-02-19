@@ -1,4 +1,4 @@
-function main(){
+ async function main(){
 
     //Option 1 
     // axios.get("https://jsonplaceholder.typicode.com/users")
@@ -64,6 +64,18 @@ function main(){
     // axios.delete('https://jsonplaceholder.typicode.com/users/1'
     // ).then((res)=> console.log(res))
     // .catch((err)=> console.log(err))
+
+
+    const userURL = "https://jsonplaceholder.typicode.com/users";
+    const postURL = "https://jsonplaceholder.typicode.com/posts";
+
+    // Promise.all([axios.get(userURL), axios.get(postURL)])
+    // .then(res => console.log(res))
+    // .catch(err => console.log(err))
+
+    const res = await Promise.all([axios.get(userURL), axios.get(postURL)])
+    console.log(res)
+    console.log(res[0],res[1]);
 }
 
 
