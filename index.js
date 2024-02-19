@@ -66,16 +66,54 @@
     // .catch((err)=> console.log(err))
 
 
-    const userURL = "https://jsonplaceholder.typicode.com/users";
-    const postURL = "https://jsonplaceholder.typicode.com/posts";
+    // const userURL = "https://jsonplaceholder.typicode.com/users";
+    // const postURL = "https://jsonplaceholder.typicode.com/posts";
 
     // Promise.all([axios.get(userURL), axios.get(postURL)])
     // .then(res => console.log(res))
     // .catch(err => console.log(err))
 
-    const res = await Promise.all([axios.get(userURL), axios.get(postURL)])
+    // const res = await Promise.all([axios.get(userURL), axios.get(postURL)])
+    // console.log(res)
+    // console.log(res[0],res[1]);
+
+
+
+
+    // Interceptor -> add data 
+
+    // axios.interceptors.request.use(function (config){
+    //     console.log(config)
+    //     config.headers['Authorization'] = 'Bearer xyz123'
+    //     return config
+    // })
+
+    // Headers
+    // const res = await axios.post('https://jsonplaceholder.typicode.com/users',
+    // {
+    //     name: 'JGM'
+    // }, 
+    // {
+    //     headers:{
+    //         'fazt': 'xyz123'
+    //     }
+    // })
+    // console.log(res)
+
+
+    // Request transform 
+    const res = await axios.get('https://jsonplaceholder.typicode.com/users', {
+        transformResponse: axios.defaults.transformResponse.concat(data =>{
+            data = data.map(user => {
+                return {
+                    ...user,
+                    myCustomTitle: `${user.name} ${user.username} ${user.email}`
+                }
+            })
+            return data
+        })
+    })
     console.log(res)
-    console.log(res[0],res[1]);
 }
 
 
